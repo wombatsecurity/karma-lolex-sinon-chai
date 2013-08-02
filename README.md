@@ -1,8 +1,11 @@
-karma-chai
-==========
+karma-sinon-chai
+================
 
-[Chai](http://chaijs.com) for [Karma](http://karma-runner.github.io)
+  * [Sinon](http://sinonjs.org/)
+  * [Chai](http://chaijs.com)
+  * [Sinon-Chai](https://github.com/domenic/sinon-chai)
 
+for [Karma](http://karma-runner.github.io)
 
 Requirements
 ------------
@@ -57,3 +60,18 @@ describe 'karma tests with chai', ->
     1.should.not.equal 2
     should.exist 123
 ```
+
+Sinon and Chai matchers for Sinon are also available:
+
+```coffee
+describe 'karma tests with sinon', ->
+
+  it 'can spy on objects', ->
+    foo = bar: ->
+    sinon.spy foo, 'bar'
+
+    foo.bar 'baz'
+
+    foo.bar.should.have.been.calledWith 'baz'
+```
+

@@ -1,25 +1,31 @@
 {
-  "name": "karma-chai",
-  "description": "Chai for Karma",
+ "name": "karma-sinon-chai",
+  "description": "Sinon and Chai for Karma",
   "keywords": [
     "karma",
     "chai",
+    "sinon",
     "mocha",
     "should"
   ],
   "version": "0.0.0",
-  "author": "Greg Thornton <xdissent@me.com> (http://xdissent.com)",
+  "author": "Kevin Mees <kev.mees@gmail.com>",
   "main": "./index.js",
   "license": "MIT",
-  "homepage": "https://github.com/xdissent/karma-chai",
+  "homepage": "https://github.com/kmees/karma-sinon-chai",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xdissent/karma-chai.git"
+    "url": "https://github.com/kmees/karma-sinon-chai.git"
   },
   "bugs": {
-    "url": "https://github.com/xdissent/karma-chai/issues"
+    "url": "https://github.com/kmees/karma-sinon-chai/issues"
   },
+  "contributors": [
+    "Greg Thornton <xdissent@me.com>"
+  ],
   "dependencies": {
-    "chai": "~1.6.1"
+    "chai": "~1.6.1",
+    "sinon": "~1.7.3",
+    "sinon-chai": "~2.4.0"
   }
 }
