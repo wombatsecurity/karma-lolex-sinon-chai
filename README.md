@@ -19,6 +19,16 @@ $ npm install 'karma@canary' --save-dev
 Note that the Karma configuration file format has changed since `v0.8`. Use 
 `karma init` to generate a fresh config.
 
+### Grunt
+
+When using [grunt-karma](https://github.com/karma-runner/grunt-karma) to run Karma,
+you need to use a version `>= 0.5.0` because earlier versions of `grunt-karma` use `karma < 0.9`
+which does not support custom plugins.
+At the time of this writing, `grunt-karma >= 0.5` is not yet available on npm, so you have
+to install it directly from the git repo, i.e.
+```sh
+npm install --save-dev git+https://github.com/karma-runner/grunt-karma.git
+```
 
 Installation
 ------------
