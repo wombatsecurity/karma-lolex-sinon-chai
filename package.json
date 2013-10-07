@@ -8,7 +8,7 @@
     "mocha",
     "should"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Kevin Mees <kev.mees@gmail.com>",
   "main": "./index.js",
   "license": "MIT",
@@ -24,7 +24,8 @@
     "postinstall": "bower install"
   },
   "contributors": [
-    "Greg Thornton <xdissent@me.com>"
+    "Greg Thornton <xdissent@me.com>",
+    "Tobias Kopelke <nox@raynode.de>"
   ],
   "dependencies": {
     "chai": "~1.6.1",
