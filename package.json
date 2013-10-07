@@ -21,7 +21,7 @@
     "url": "https://github.com/kmees/karma-sinon-chai/issues"
   },
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "bower install"
   },
   "contributors": [
     "Greg Thornton <xdissent@me.com>"
