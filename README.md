@@ -10,47 +10,28 @@ for [Karma](http://karma-runner.github.io)
 Requirements
 ------------
 
-This module currently requires the `canary` version of Karma:
-
-```sh
-$ npm install 'karma@canary' --save-dev
-```
-
-Note that the Karma configuration file format has changed since `v0.8`. Use 
-`karma init` to generate a fresh config.
-
-### Grunt
-
-When using [grunt-karma](https://github.com/karma-runner/grunt-karma) to run Karma,
-you need to use a version `>= 0.5.0` because earlier versions of `grunt-karma` use `karma < 0.9`
-which does not support custom plugins.
-At the time of this writing, `grunt-karma >= 0.5` is not yet available on npm, so you have
-to install it directly from the git repo, i.e.
-```sh
-npm install --save-dev git+https://github.com/karma-runner/grunt-karma.git
-```
+This Karma plugin requires Karma `~0.10.0`
 
 Installation
 ------------
 
-Install the module from Github:
+Install the module via npm
 
 ```sh
-$ npm install 'git+https://github.com/xdissent/karma-chai.git' --save-dev
+$ npm install --save-dev karma-sinon-chai
 ```
 
-Add `chai` to the `frameworks` key in your Karma configuration:
+Add `sinon-chai` to the `frameworks` key in your Karma configuration:
 
-```coffee
-module.exports = (karma) ->
-  karma.configure
-
-    # frameworks to use
-    frameworks: ['mocha', 'chai']
-
-    # ...
+```js
+module.exports = function(config) {
+  'use strict';
+  config.set({
+    frameworks: ['mocha', 'sinon-chai'],
+    #...
+  });
+}
 ```
-
 
 Usage
 -----
@@ -84,4 +65,3 @@ describe 'karma tests with sinon', ->
 
     foo.bar.should.have.been.calledWith 'baz'
 ```
-
