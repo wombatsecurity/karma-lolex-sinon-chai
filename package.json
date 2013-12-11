@@ -29,7 +29,9 @@
   ],
   "dependencies": {
     "chai": "~1.8",
-    "sinon-chai": "~2.4",
+    "sinon-chai": "~2.4"
+  },
+  "devDependencies": {
     "bower": "~1.2"
   },
   "peerDependencies": {
