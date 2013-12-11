@@ -28,11 +28,11 @@
     "Tobias Kopelke <nox@raynode.de>"
   ],
   "dependencies": {
-    "chai": "~1.6.1",
-    "sinon-chai": "~2.4.0",
-    "bower": "~1.0.3"
+    "chai": "~1.8",
+    "sinon-chai": "~2.4",
+    "bower": "~1.2"
   },
   "peerDependencies": {
-    "karma": "~0.10.0"
+    "karma": "~0.10"
   }
 }
