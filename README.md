@@ -65,3 +65,7 @@ describe 'karma tests with sinon', ->
 
     foo.bar.should.have.been.calledWith 'baz'
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kmees/karma-sinon-chai/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
