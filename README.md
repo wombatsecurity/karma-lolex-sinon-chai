@@ -35,17 +35,6 @@ module.exports = function(config) {
 }
 ```
 
-
-#### :warning: Forking & Installation via git :warning:
-
-When forking this repository and installing the npm module via git, i.e.
-```sh
-$ npm install --save-dev git://...
-```
-the bower dependencies will **not** be resolved automatically. You can either
- * run `bower install` manually in `node_modules/karma-sinon-chai` after install
- * add the resolved bower dependency to the fork
-
 Usage
 -----
 
