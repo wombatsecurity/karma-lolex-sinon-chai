@@ -30,8 +30,8 @@
     "Tobias Kopelke <nox@raynode.de>"
   ],
   "dependencies": {
-    "chai": "~1.9",
-    "sinon-chai": "~2.5"
+    "chai": "^1.10",
+    "sinon-chai": "^2.5"
   },
   "devDependencies": {
     "bower": "~1.3"
