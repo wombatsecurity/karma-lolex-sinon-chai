@@ -20,23 +20,11 @@
   "bugs": {
     "url": "https://github.com/kmees/karma-sinon-chai/issues"
   },
-  "scripts": {
-    "prepublish": "node setup.js prepublish",
-    "postpublish": "node setup.js postpublish",
-    "postinstall": "node setup.js postinstall"
-  },
   "contributors": [
     "Greg Thornton <xdissent@me.com>",
     "Tobias Kopelke <nox@raynode.de>"
   ],
   "dependencies": {
-    "chai": "~1.9",
     "sinon-chai": "~2.5"
-  },
-  "devDependencies": {
-    "bower": "~1.3"
-  },
-  "peerDependencies": {
-    "karma": ">=0.10"
   }
 }
