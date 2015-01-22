@@ -25,6 +25,7 @@
     "Tobias Kopelke <nox@raynode.de>"
   ],
   "dependencies": {
-    "sinon-chai": "~2.5"
+    "chai": "^1.10",
+    "sinon-chai": "^2.5"
   }
 }
