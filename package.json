@@ -26,6 +26,10 @@
   ],
   "dependencies": {
     "chai": "^1.10",
-    "sinon-chai": "^2.5"
+    "sinon": "^1.12",
+    "sinon-chai": "^2.6",
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
   }
 }
