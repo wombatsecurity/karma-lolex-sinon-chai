@@ -7,7 +7,7 @@ var pattern = function(file) {
 
 var endsWith = function(substr) {
   return function(str) {
-    return str.indexOf(substr) === (str.length - substr.length);
+    return str.indexOf(substr) >= 0 && str.indexOf(substr) === (str.length - substr.length);
   };
 };
 
