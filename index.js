@@ -12,43 +12,30 @@ var endsWith = function(substr) {
 };
 
 var framework = function(files) {
-  files.unshift(pattern(path.resolve(require.resolve('sinon-chai'))));
-
-  var sinonPath = path.resolve(require.resolve('sinon'), '../sinon.js');
-  if (!_(files).map('pattern').find(endsWith(path.relative(__dirname, sinonPath)))) {
-    var sinonBasePath = path.dirname(sinonPath);
-    var sinonFiles = [
-      "./sinon.js",
-      "./sinon/util/core.js",
-      "./sinon/extend.js",
-      "./sinon/typeOf.js",
-      "./sinon/times_in_words.js",
-      "./sinon/spy.js",
-      "./sinon/call.js",
-      "./sinon/behavior.js",
-      "./sinon/stub.js",
-      "./sinon/mock.js",
-      "./sinon/collection.js",
-      "./sinon/assert.js",
-      "./sinon/sandbox.js",
-      "./sinon/test.js",
-      "./sinon/test_case.js",
-      "./sinon/match.js",
-      "./sinon/format.js",
-      "./sinon/log_error.js"
-    ];
-
-    _.forEach(sinonFiles.reverse(), function(relativeFile) {
-      var absoluteFile = path.join(sinonBasePath, relativeFile);
-
-      files.unshift(pattern(absoluteFile));
-    });
+  var isDuplicate = function(file) {
+    return !!_(files).map('pattern').find(endsWith(path.relative(__dirname, file)));
   }
 
+  /* Sinon */
+  var sinonRoot = path.resolve(require.resolve('sinon'), '../../')
+  var sinonPath = path.resolve(sinonRoot, 'pkg/sinon.js');
+  var sinonTimersPath = path.resolve(sinonRoot, 'pkg/sinon-timers.js');
+  if (!isDuplicate(sinonPath)) {
+    files.unshift(pattern(sinonTimersPath));
+    files.unshift(pattern(sinonPath));
+  }
+
+  /* Chai */
   var chaiPath = path.resolve(require.resolve('chai'), '../chai.js');
-  if (!_(files).map('pattern').find(endsWith(path.relative(__dirname, chaiPath)))) {
+  if (!isDuplicate(chaiPath)) {
     files.unshift(pattern(chaiPath));
     files.push(pattern(path.join(__dirname, 'chai-adapter.js')));
+  }
+
+  /* Sinon-Chai */
+  var sinonChaiPath = path.resolve(require.resolve('sinon-chai'));
+  if (!isDuplicate(sinonChaiPath)) {
+    files.push(pattern(sinonChaiPath))
   }
 };
 
