@@ -1,5 +1,4 @@
 var path = require('path');
-var _ = require('lodash');
 
 var pattern = function(file) {
   return {pattern: file, included: true, served: true, watched: false};
@@ -11,10 +10,17 @@ var endsWith = function(substr) {
   };
 };
 
-var framework = function(files) {
-  var isDuplicate = function(file) {
-    return !!_(files).map('pattern').find(endsWith(path.relative(__dirname, file)));
+var _isDuplicate = function(files, file) {
+  var result = false;
+  for (var i = 0; i < files.length; i++) {
+    var pattern = files[i].pattern
+    result = result || endsWith(path.relative(__dirname, file))(pattern);
   }
+  return result;
+}
+
+var framework = function(files) {
+  var isDuplicate = _isDuplicate.bind(this, files)
 
   /* Sinon */
   var sinonRoot = path.resolve(require.resolve('sinon'), '../../')
