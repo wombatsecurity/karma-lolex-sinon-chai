@@ -1,5 +1,8 @@
 var path = require('path');
 
+var isNode = typeof module !== "undefined" && module.exports && typeof require === "function";
+var isAMD = typeof define === "function" && typeof define.amd === "object" && define.amd;
+
 var pattern = function(file) {
   return {pattern: file, included: true, served: true, watched: false};
 };
@@ -19,11 +22,26 @@ var _isDuplicate = function(files, file) {
   return result;
 }
 
-var framework = function(files) {
-  var isDuplicate = _isDuplicate.bind(this, files)
+function loadDependencies(require, epxorts, module, lolex) {
+    var core = require("./core");
+    makeApi(core, lolex);
+    module.exports = core;
+}
 
+
+
+var framework = function(files) {
+  var isDuplicate = _isDuplicate.bind(this, files);
+  
+  var sinonRoot = path.resolve(require.resolve('sinon'), '../../');
+  
+  /* Lolex (needed for Sinon if no AMD or NodeJS) */
+  var lolexPath = path.resolve(require.resolve('lolex'), '../../lolex.js');
+  if (!isDuplicate(lolexPath)) {
+    files.unshift(pattern(lolexPath));
+  }
+  
   /* Sinon */
-  var sinonRoot = path.resolve(require.resolve('sinon'), '../../')
   var sinonPath = path.resolve(sinonRoot, 'pkg/sinon.js');
   var sinonTimersPath = path.resolve(sinonRoot, 'pkg/sinon-timers.js');
   if (!isDuplicate(sinonPath)) {
