@@ -35,12 +35,6 @@ var framework = function(files) {
   
   var sinonRoot = path.resolve(require.resolve('sinon'), '../../');
   
-  /* Lolex (needed for Sinon if no AMD or NodeJS) */
-  var lolexPath = path.resolve(require.resolve('lolex'), '../../lolex.js');
-  if (!isDuplicate(lolexPath)) {
-    files.unshift(pattern(lolexPath));
-  }
-  
   /* Sinon */
   var sinonPath = path.resolve(sinonRoot, 'pkg/sinon.js');
   var sinonTimersPath = path.resolve(sinonRoot, 'pkg/sinon-timers.js');
@@ -60,6 +54,12 @@ var framework = function(files) {
   var sinonChaiPath = path.resolve(require.resolve('sinon-chai'));
   if (!isDuplicate(sinonChaiPath)) {
     files.push(pattern(sinonChaiPath))
+  }
+  
+  /* Lolex (needed for Sinon if no AMD or NodeJS) */
+  var lolexPath = path.resolve(require.resolve('lolex'), '../../lolex.js');
+  if (!isDuplicate(lolexPath)) {
+    files.unshift(pattern(lolexPath));
   }
 };
 
