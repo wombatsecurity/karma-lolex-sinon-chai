@@ -1,8 +1,8 @@
-[![NPM version](https://badge.fury.io/js/karma-sinon-chai.png)](http://badge.fury.io/js/karma-sinon-chai) [![Dependency status](https://david-dm.org/xdissent/karma-chai.png)](https://david-dm.org/kmees/karma-sinon-chai) [![devDependency Status](https://david-dm.org/xdissent/karma-chai/dev-status.png)](https://david-dm.org/kmees/karma-sinon-chai#info=devDependencies)
 
-karma-sinon-chai
+karma-lolex-sinon-chai
 ================
 
+  * [Lolex](https://github.com/sinonjs/lolex)
   * [Sinon](http://sinonjs.org/)
   * [Chai](http://chaijs.com)
   * [Sinon-Chai](https://github.com/domenic/sinon-chai)
